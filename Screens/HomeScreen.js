@@ -1,10 +1,11 @@
 import * as React from "react";
 import {Text, View, Button} from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
+import styles from './style.js';
 
 function HomeScreen() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <View style={[styles.appBackground, { flex: 1, justifyContent: 'center', alignItems: 'center' }]}>
       <Text>Home!</Text>
     </View>
   );
