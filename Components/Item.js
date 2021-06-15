@@ -28,7 +28,7 @@ const DATA = [
 
 const Item = ({ item, onPress, backgroundColor, textColor }) => (
   <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
-    <Text style={[styles.title, textColor]}>{${item.title} - ${item.quantity}}</Text>
+    <Text style={[styles.title, textColor]}>{$item.title - $item.quantity}</Text>
   </TouchableOpacity>
 );
 
