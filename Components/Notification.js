@@ -4,19 +4,15 @@ import { View, TouchableOpacity, StyleSheet, Text, Button } from 'react-native';
 import { CommonActions } from '@react-navigation/native';
 
 export default function Notification(props) {
+    
 
   return (
     <View style={styles.overall}>
       <View style={styles.notifContainer}>
-        <TouchableOpacity style={styles.notifBox}>
           <Text style={styles.notifText} >
             {props.text}
           </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity >
           <MaterialIcons name="cancel" size={30} color="red" />
-        </TouchableOpacity>
       </View>
     </View>
   );
@@ -29,7 +25,7 @@ const styles = StyleSheet.create({
   },
   notifContainer: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     alignItems: 'center',
     margin: 10,
     borderWidth: 1.5,
@@ -39,16 +35,14 @@ const styles = StyleSheet.create({
     height: 70,
     width: '100%',
     flexDirection: 'row',
-  },
-  notifBox: {
-    flex: 1,
-    width: '100%',
+    flexShrink: 1,
   },
   notifText: {
-    alignItems: 'center',
+    alignSelf: 'center',
     justifyContent: 'center',
-    minHeight: '100%',
-    minWidth: '100%',
+    //minHeight: '100%',
+    width: '90%',
 
   },
+
 });
