@@ -6,6 +6,7 @@ import HomeScreen from "./Screens/HomeScreen.js";
 import ExploreScreen from "./Screens/ExploreScreen.js";
 import NotificationsScreen from "./Screens/NotificationsScreen.js";
 import UploadScreen from "./Screens/UploadScreen.js";
+import SearchScreen from "./Screens/SearchScreen.js";
 
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 
@@ -40,7 +41,7 @@ export default function App() {
         }}
       >
         <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Explore" component={ExploreScreen} />
+        <Tab.Screen name="Explore" component={SearchScreen} />
         <Tab.Screen name="Upload" component={UploadScreen} />
         <Tab.Screen name="Notifications" component={NotificationsScreen} />
       </Tab.Navigator>

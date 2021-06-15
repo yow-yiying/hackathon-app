@@ -23,10 +23,12 @@ export default StyleSheet.create({
 
     // }, 
     detailsCornerName: {
-
+        fontSize: 30,
+        fontWeight: 'bold',
     },
     detailsContainer: {
-
+        flex: 1,
+        padding: 10,
     },
     defaultContainer: {
         flex: 1,
@@ -38,6 +40,11 @@ export default StyleSheet.create({
     detailsText: {
         fontSize: 20,
     },
+    detailsPhoto: {
+        width: 100,
+        height: 100,
+    },
+
     itemContainer: {
 
     },
