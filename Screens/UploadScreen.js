@@ -38,7 +38,6 @@ function UploadScreen() {
   const [items, setItemsArr] = useState([]);
 
   const addItem = () => {
-    Keyboard.dismiss();
     console.log(inputItem);
     setItemsArr([...items, inputItem]);
     setInputItem('');
@@ -47,7 +46,7 @@ function UploadScreen() {
   return (
     <TouchableWithoutFeedback
       onPress={() => Keyboard.dismiss()}
-      accessible={false}
+    accessible={false} 
     >
       <ScrollView keyboardShouldPersistTaps="handled" style={styles.emptySpace}>
         <KeyboardAvoidingView
@@ -91,7 +90,7 @@ function UploadScreen() {
               </View>
             </View>
 
-            <View style={styles.itemContainer}>
+            <View style={styles.oneItem}>
               <View style={styles.itemHeader}>
                 <Text style={styles.itemText}>Items:</Text>
 
@@ -106,7 +105,7 @@ function UploadScreen() {
 
               {items.map((inputItem, index) => {
             return (
-                <ItemInput/>
+                <ItemInput key={index} />
             );
           })}
             </View>
@@ -124,7 +123,7 @@ function UploadScreen() {
                 
               </KeyboardAvoidingView>
             </View>
-            <View style={{ backgroundColor: "white" }}>
+            <View style={{ backgroundColor: "white", justifyContent: 'space-between'}}>
               <TouchableOpacity onPress={pressHandler}>
                 <DoneButton onPress={pressHandler} />
               </TouchableOpacity>
@@ -132,7 +131,7 @@ function UploadScreen() {
           </View>
         </KeyboardAvoidingView>
       </ScrollView>
-    </TouchableWithoutFeedback>
+    </TouchableWithoutFeedback> 
   );
 }
 
@@ -150,7 +149,8 @@ export default function UploadStack() {
 const styles = StyleSheet.create({
   emptySpace: {
     backgroundColor: "white",
-    flex:1,
+    //flex:1,
+    flexGrow: 1
   },
   pageContainer: {
     backgroundColor: "white",
@@ -197,29 +197,28 @@ const styles = StyleSheet.create({
   },
   itemContainer: {
     width: "100%",
-    
-    //height: 100,
+    height: 100,
     justifyContent: "space-evenly",
     alignContent: "space-between",
     backgroundColor: "white",
   },
   itemHeader: {
     flexDirection: "row",
-    alignItems: "flex-end",
     justifyContent: "space-between",
+    width: '100%',
     marginRight: 10,
+    marginTop: 5,
   },
   itemText: {
     marginLeft: 10,
     marginTop: 10,
     fontSize: 20,
     fontWeight: "bold",
+    alignContent: 'center',
   },
   oneItem: {
-    flexDirection: "row",
-    justifyContent: "center",
     alignItems: 'center',
-    margin: 5,
+    height: '30%',
   },
   messageContainer: {
     width: "100%",
@@ -227,7 +226,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-evenly",
     alignContent: "space-between",
     backgroundColor: "white",
-    marginTop: -10,
-    marginBottom: 10,
+    marginTop: -5,
+    //marginBottom: 10,
   },
 });
