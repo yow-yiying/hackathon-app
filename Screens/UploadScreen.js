@@ -14,6 +14,7 @@ import {
   ScrollView,
   TouchableWithoutFeedback,
   TouchableOpacity,
+  Dimensions,
 } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 //import style from "./style";
@@ -21,6 +22,7 @@ import DoneButton from "../Components/DoneButton";
 import { MaterialIcons } from "@expo/vector-icons";
 import ItemInput from "../Components/ItemInput";
 import Item from "../Components/Item";
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 function UploadScreen() {
   const addBox = () => {};
@@ -43,16 +45,17 @@ function UploadScreen() {
     setItemsArr([...items, inputItem]);
     setInputItem('');
   };
-
+  const { width, height } = Dimensions.get('window');
   return (
+    <SafeAreaView style={{flex:1,}}>
     <TouchableWithoutFeedback
       onPress={() => Keyboard.dismiss()}
       accessible={false}
     >
-      <ScrollView keyboardShouldPersistTaps="handled" style={styles.emptySpace}>
-        <KeyboardAvoidingView
-          behavior={Platform.select({ android: "height", ios: "padding" })}
-        >
+      <View style={styles.emptySpace}>
+      <ScrollView keyboardShouldPersistTaps="handled">
+      <KeyboardAvoidingView behavior={"padding"} enabled  style= {{flexGrow:1,height:'100%'}}>
+        
           <View style={styles.pageContainer}>
             <View style={styles.imageContainer}>
               <Text style={styles.imageText}>Upload Your Image Here! </Text>
@@ -112,10 +115,7 @@ function UploadScreen() {
             </View>
 
             <View style={styles.messageContainer}>
-              <KeyboardAvoidingView
-                behavior={Platform.OS === "ios" ? "padding" : "height"}
-                style={{ flex: 1 }}
-              >
+            <KeyboardAvoidingView behavior={"padding"} enabled  style={{flexGrow:1,height:'100%'}}> 
                 <Text style={styles.itemText}>Message:</Text>
                 <TextInput
                   style={styles.itemBox}
@@ -130,9 +130,12 @@ function UploadScreen() {
               </TouchableOpacity>
             </View>
           </View>
-        </KeyboardAvoidingView>
+          </KeyboardAvoidingView>
+          
       </ScrollView>
+      </View>
     </TouchableWithoutFeedback>
+    </SafeAreaView>
   );
 }
 
@@ -162,7 +165,7 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     borderRadius: 5,
-    height: "30%",
+    height: 200,
     justifyContent: "center",
     alignItems: "center",
     borderColor: "rgb(174, 182, 191)",
@@ -215,19 +218,15 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
   },
-  oneItem: {
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: 'center',
-    margin: 5,
-  },
   messageContainer: {
     width: "100%",
     height: 100,
     justifyContent: "space-evenly",
     alignContent: "space-between",
     backgroundColor: "white",
-    marginTop: -10,
     marginBottom: 10,
+    marginTop:10,
   },
 });
+
+//behavior={Platform.select({ android: "height", ios: "padding" })}
