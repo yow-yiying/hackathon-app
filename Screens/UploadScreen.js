@@ -150,6 +150,7 @@ export default function UploadStack() {
 const styles = StyleSheet.create({
   emptySpace: {
     backgroundColor: "white",
+    flex:1,
   },
   pageContainer: {
     backgroundColor: "white",
