@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Text, View, FlatList, Alert, Button, StyleSheet, TextInput,Keyboard,KeyboardAvoidingView,SafeAreaView,ScrollView,TouchableWithoutFeedback, TouchableOpacity} from "react-native";
+import {Platform, Text, View, FlatList, Alert, Button, StyleSheet, TextInput,Keyboard,KeyboardAvoidingView,SafeAreaView,ScrollView,TouchableWithoutFeedback, TouchableOpacity} from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 //import style from "./style";
 import DoneButton from "../Components/DoneButton";
@@ -9,7 +9,7 @@ function UploadScreen() {
   const addBox = () =>{}
   const pressHandler = () => {
     Alert.alert('Confirm?','The listing cannot be deleted once created',[
-        {text: 'Confirm', onPress:()=> returnToHomeScreen },
+        {text: 'Confirm', onPress:() => returnToHomeScreen },
         {text: 'Cancel', style:'cancel'},
     ])
   }
@@ -79,11 +79,14 @@ function UploadScreen() {
                     </View>
 
                     <View style={styles.messageContainer}>
+                        <KeyboardAvoidingView
+                            behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style = {{flex: 1}}>
                         <Text style={styles.itemText} >Message:</Text>
                         <TextInput
                             style={styles.itemBox}
                             placeholder={'Leave a message'}
                         />
+                        </KeyboardAvoidingView>
                      </View>
                     <View style={{backgroundColor:'white'}}>
                         <TouchableOpacity onPress={pressHandler}>
