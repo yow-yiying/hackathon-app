@@ -2,6 +2,7 @@ import * as React from "react";
 import {Text, View, Button, StyleSheet, TextInput,Keyboard,KeyboardAvoidingView,SafeAreaView,ScrollView,TouchableWithoutFeedback} from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 //import style from "./style";
+import DoneButton from "../Components/DoneButton";
 
 import { MaterialIcons } from '@expo/vector-icons'; 
 function UploadScreen() {
@@ -71,7 +72,9 @@ function UploadScreen() {
                             placeholder={'Leave a message'}
                         />
                      </View>
-        
+                    <View style={{backgroundColor:'white'}}>
+                        <DoneButton/>
+                    </View>
                     </KeyboardAvoidingView>
                 </View>
             </ScrollView>  
@@ -141,6 +144,7 @@ itemContainer: {
   height:100,
   justifyContent:"space-evenly",
   alignContent:'space-between',
+  backgroundColor:'white',
 },
 itemHeader:{
     flexDirection:'row',

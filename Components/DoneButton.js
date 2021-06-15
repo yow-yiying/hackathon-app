@@ -2,14 +2,14 @@ import React from 'react';
 import { MaterialIcons } from '@expo/vector-icons'; 
 import { View, TouchableOpacity, StyleSheet, Alert, onPress, SafeAreaView,Text} from 'react-native';
 
-export default function Button() {
+export default function DoneButton() {
     
     return (
          
             <View style={styles.container}>
                 <View style={styles.confirmContainer}>
                     <Text style={styles.text}>Confirm</Text>
-                    <MaterialIcons name="done" size={40} color="green" />
+                    <MaterialIcons name="done" size={40} color="pink" />
                 </View> 
             </View>
         
@@ -23,16 +23,16 @@ const styles = StyleSheet.create({
       height:60,
       alignItems:'center',
       justifyContent:'center',
-      borderColor:'green',
-      borderWidth:5,
+      borderColor:'pink',
+      borderWidth:3,
       borderRadius: 40,
       width:'80%',
-      backgroundColor: 'lightgray',
+      backgroundColor: 'white',
     },
     text:{
         fontSize:24,
         fontWeight:'bold',
-        color:'green',
+        color:'pink',
     },
     container:{
         alignItems:'center',
