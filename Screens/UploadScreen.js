@@ -24,7 +24,6 @@ import ItemInput from "../Components/ItemInput";
 
 
 function UploadScreen() {
-  const addBox = () => {};
   const pressHandler = () => {
     Alert.alert("Confirm", "The listing cannot be deleted once created", [
       { text: "Confirm", onPress: () => returnToHomeScreen },
@@ -64,7 +63,6 @@ function UploadScreen() {
                 <MaterialIcons
                   name="edit"
                   size={25}
-                  onPress={addBox}
                   color="black"
                   style={styles.uploadPicture}
                   margin={10}
@@ -103,7 +101,7 @@ function UploadScreen() {
                 <MaterialIcons
                   name="add"
                   size={25}
-                  color="deeppink"
+                  color="#c9184a"
                 />
                 </TouchableOpacity>
               </View>
@@ -169,7 +167,7 @@ const styles = StyleSheet.create({
     height: 200,
     justifyContent: "center",
     alignItems: "center",
-    borderColor: "rgb(174, 182, 191)",
+    borderColor: "#c9184a",
     backgroundColor: "pink",
     margin: 10,
     flexDirection: "row",
@@ -187,7 +185,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     margin: 10,
     borderWidth: 2,
-    borderColor: "pink",
+    borderColor: "#c9184a",
   },
   timeContainer: {
     marginTop: 10,
@@ -198,6 +196,9 @@ const styles = StyleSheet.create({
   },
   timeBox: {
     width: "40%",
+  },
+  timeText:{
+    fontSize:18,
   },
   itemContainer: {
     width: "100%",

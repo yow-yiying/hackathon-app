@@ -9,7 +9,7 @@ export default function DoneButton() {
             <View style={styles.container}>
                 <View style={styles.confirmContainer}>
                     <Text style={styles.text}>Confirm</Text>
-                    <MaterialIcons name="done" size={40} color="pink" />
+                    <MaterialIcons name="done" size={40} color="#c9184a" />
                 </View> 
             </View>
         
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
       height:60,
       alignItems:'center',
       justifyContent:'center',
-      borderColor:'pink',
+      borderColor:'#c9184a',
       borderWidth:3,
       borderRadius: 40,
       width:'80%',
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     text:{
         fontSize:24,
         fontWeight:'bold',
-        color:'pink',
+        color:'#c9184a',
     },
     container:{
         alignItems:'center',
