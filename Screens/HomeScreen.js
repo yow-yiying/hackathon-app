@@ -24,7 +24,7 @@ function HomeScreen({ navigation }) {
       <View style = {styles.defaultContainer}>
         <Text style = {
           [styles.detailsText, 
-          {fontWeight: 'bold', paddingLeft: 10, paddingBottom: 15}
+          {fontWeight: 'bold', padding: 15}
           ]}>
             <Ionicons name="location-sharp" size={27} color='#c9184a' /> Corners near you:
             </Text>

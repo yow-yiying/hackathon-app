@@ -4,17 +4,18 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { Entypo } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import Item from '../Components/Item.js';
+import ItemReq from '../Components/ItemReq.js';
 
 export default function ListingDetailsScreen() {
 
   return (
     <View style={[styles.appBackground, { flex: 1, justifyContent: 'center', alignItems: 'center' }]}>
         <Text style = {styles.detailsCornerName}>Kindness Corner</Text>
+        <ScrollView>
             <View style = {styles.photoContainer}>
             <Image style = {styles.detailsPhoto}
                 source = {{uri: "https://wallpaperaccess.com/full/1261215.jpg"}}/>
             </View>
-            <ScrollableView>
             <View style = {styles.detailsContainer}>
                 <Text style = {styles.detailsText}>
                     <Ionicons name="location-sharp" size={24} color="#c9184a"/>  [Location]
@@ -22,16 +23,24 @@ export default function ListingDetailsScreen() {
                 <Text style = {styles.detailsText}>
                     <Ionicons style = {{ marginRight: 5 }} name="time" size={24} color="#c9184a" />  [Time]
                 </Text>
-                <Text style = {styles.headers}>Items available:</Text>
-                <Item></Item>
-                <Text style = {styles.headers}>Message:</Text>
-                <Text style = {styles.detailsText}>
-                    the quick brown fox jumps over the lazy dog the quick brown fox jumps over 
-                    the lazy dog the quick brown fox jumps over the lazy dog
-                </Text>
+                <View style = {{margin: 5}}>
+                    <Text style = {styles.headers}>Message:</Text>
+                    <Text style = {styles.detailsText}>
+                        the quick brown fox jumps over the lazy dog the quick brown fox jumps over 
+                        the lazy dog the quick brown fox jumps over the lazy dog
+                    </Text>
+                </View>
+                <View style = {{margin: 5}}>
+                    <Text style = {styles.headers}>Items available:</Text>
+                    <Item></Item>
+                </View>
 
+                <View style = {{margin: 5}}>
+                    <Text style = {styles.headers}>Items requested:</Text>
+                    <ItemReq></ItemReq>
+                </View>
             </View>
-            </ScrollableView>
+            </ScrollView>
     </View>
   );
 }

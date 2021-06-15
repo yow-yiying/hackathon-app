@@ -11,7 +11,7 @@ import {
 const DATA = [
   {
     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    title: 'soemthing',
+    title: 'something',
     quantity: 5,
   },
   {
@@ -26,7 +26,7 @@ const DATA = [
   },
 ];
 
-const Item = ({ item, onPress, backgroundColor, textColor }) => (
+const ItemReq = ({ item, onPress, backgroundColor, textColor }) => (
   <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
     <Text style={[styles.title, textColor]}>{`${item.title} - ${item.quantity}`}</Text>
   </TouchableOpacity>
@@ -40,7 +40,7 @@ const App = () => {
     const color = item.id === selectedId ? 'white' : 'black';
 
     return (
-      <Item
+      <ItemReq
         item={item}
         onPress={() => setSelectedId(item.id)}
         backgroundColor={{ backgroundColor }}

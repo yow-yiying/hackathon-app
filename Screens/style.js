@@ -34,8 +34,8 @@ export default StyleSheet.create({
         flex: 1,
         width: "98%",
         // alignText: 'right',
-        padding: 10,
-        margin: 10,
+        // padding: 10,
+
 
     },
     detailsText: {
