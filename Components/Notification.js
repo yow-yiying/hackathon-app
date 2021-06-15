@@ -21,7 +21,7 @@ export default function Notification(props) {
     </View>
   );
 }
-const setHeight = 60;
+
 const styles = StyleSheet.create({
   overall: {
     flexDirection: 'row',

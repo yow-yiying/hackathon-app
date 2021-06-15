@@ -5,7 +5,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { View, TouchableOpacity } from 'react-native';
 import { CommonActions } from '@react-navigation/native';
 
-export default function Item(props) {
+export default function cancelButton(props) {
   return (
     <View>
     <TouchableOpacity onPress = {() => CommonActions.goBack()}>
