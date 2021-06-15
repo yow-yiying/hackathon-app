@@ -40,7 +40,6 @@ function UploadScreen() {
   const [items, setItemsArr] = useState([]);
 
   const addItem = () => {
-    Keyboard.dismiss();
     console.log(inputItem);
     setItemsArr([...items, inputItem]);
     setInputItem('');
@@ -50,7 +49,7 @@ function UploadScreen() {
     <SafeAreaView style={{flex:1,}}>
     <TouchableWithoutFeedback
       onPress={() => Keyboard.dismiss()}
-      accessible={false}
+    accessible={false} 
     >
       <View style={styles.emptySpace}>
       <ScrollView keyboardShouldPersistTaps="handled">
@@ -94,7 +93,7 @@ function UploadScreen() {
               </View>
             </View>
 
-            <View style={styles.itemContainer}>
+            <View style={styles.oneItem}>
               <View style={styles.itemHeader}>
                 <Text style={styles.itemText}>Items:</Text>
 
@@ -109,7 +108,7 @@ function UploadScreen() {
 
               {items.map((inputItem, index) => {
             return (
-                <ItemInput/>
+                <ItemInput key={index} />
             );
           })}
             </View>
@@ -124,7 +123,7 @@ function UploadScreen() {
                 
               </KeyboardAvoidingView>
             </View>
-            <View style={{ backgroundColor: "white" }}>
+            <View style={{ backgroundColor: "white", justifyContent: 'space-between'}}>
               <TouchableOpacity onPress={pressHandler}>
                 <DoneButton onPress={pressHandler} />
               </TouchableOpacity>
@@ -133,9 +132,13 @@ function UploadScreen() {
           </KeyboardAvoidingView>
           
       </ScrollView>
+<<<<<<< HEAD
       </View>
     </TouchableWithoutFeedback>
     </SafeAreaView>
+=======
+    </TouchableWithoutFeedback> 
+>>>>>>> 23faee5a2347a2b9f79704c283d175e8f1510cb2
   );
 }
 
@@ -153,7 +156,8 @@ export default function UploadStack() {
 const styles = StyleSheet.create({
   emptySpace: {
     backgroundColor: "white",
-    flex:1,
+    //flex:1,
+    flexGrow: 1
   },
   pageContainer: {
     backgroundColor: "white",
@@ -200,32 +204,45 @@ const styles = StyleSheet.create({
   },
   itemContainer: {
     width: "100%",
-    
-    //height: 100,
+    height: 100,
     justifyContent: "space-evenly",
     alignContent: "space-between",
     backgroundColor: "white",
   },
   itemHeader: {
     flexDirection: "row",
-    alignItems: "flex-end",
     justifyContent: "space-between",
+    width: '100%',
     marginRight: 10,
+    marginTop: 5,
   },
   itemText: {
     marginLeft: 10,
     marginTop: 10,
     fontSize: 20,
     fontWeight: "bold",
+    alignContent: 'center',
   },
+<<<<<<< HEAD
+=======
+  oneItem: {
+    alignItems: 'center',
+    height: '30%',
+  },
+>>>>>>> 23faee5a2347a2b9f79704c283d175e8f1510cb2
   messageContainer: {
     width: "100%",
     height: 100,
     justifyContent: "space-evenly",
     alignContent: "space-between",
     backgroundColor: "white",
+<<<<<<< HEAD
     marginBottom: 10,
     marginTop:10,
+=======
+    marginTop: -5,
+    //marginBottom: 10,
+>>>>>>> 23faee5a2347a2b9f79704c283d175e8f1510cb2
   },
 });
 

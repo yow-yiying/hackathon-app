@@ -36,6 +36,7 @@ export default StyleSheet.create({
         // alignText: 'right',
         padding: 10,
         margin: 10,
+
     },
     detailsText: {
         fontSize: 20,

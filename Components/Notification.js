@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MaterialIcons } from '@expo/vector-icons';
+import { Entypo } from '@expo/vector-icons';
 import { View, TouchableOpacity, StyleSheet, Text, Button } from 'react-native';
 import { CommonActions } from '@react-navigation/native';
 
@@ -12,7 +12,7 @@ export default function Notification(props) {
           <Text style={styles.notifText} >
             {props.text}
           </Text>
-          <MaterialIcons name="cancel" size={30} color="red" />
+          <Entypo name="cross" size={24} color="grey" />
       </View>
     </View>
   );
@@ -28,16 +28,17 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     margin: 10,
-    borderWidth: 1.5,
+    borderWidth: 2,
     borderRadius: 10,
-    padding: 8,
-    borderColor: 'rgb(174, 182, 191)',
+    padding: 10,
+    borderColor: '#c9184a',
     height: 70,
-    width: '100%',
+    // width: '95%',
     flexDirection: 'row',
     flexShrink: 1,
   },
   notifText: {
+    fontSize: 15,
     alignSelf: 'center',
     justifyContent: 'center',
     //minHeight: '100%',

@@ -3,7 +3,7 @@ import {Image, Text, View, Button, ScrollView, StyleSheet} from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { Entypo } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
-// import Item from '../Components/Item.js';
+import Item from '../Components/Item.js';
 
 export default function ListingDetailsScreen() {
 
@@ -14,15 +14,16 @@ export default function ListingDetailsScreen() {
             <Image style = {styles.detailsPhoto}
                 source = {{uri: "https://wallpaperaccess.com/full/1261215.jpg"}}/>
             </View>
+            <ScrollableView>
             <View style = {styles.detailsContainer}>
                 <Text style = {styles.detailsText}>
-                    <Ionicons style = {{ marginRight: 5 }} name="location-sharp" size={24} color="#c9184a"/>[Location]
+                    <Ionicons name="location-sharp" size={24} color="#c9184a"/>  [Location]
                 </Text>
                 <Text style = {styles.detailsText}>
-                    <Ionicons style = {{ marginRight: 5 }} name="time" size={24} color="#c9184a" />[Time]
+                    <Ionicons style = {{ marginRight: 5 }} name="time" size={24} color="#c9184a" />  [Time]
                 </Text>
                 <Text style = {styles.headers}>Items available:</Text>
-                {/* <Item></Item> */}
+                <Item></Item>
                 <Text style = {styles.headers}>Message:</Text>
                 <Text style = {styles.detailsText}>
                     the quick brown fox jumps over the lazy dog the quick brown fox jumps over 
@@ -30,6 +31,7 @@ export default function ListingDetailsScreen() {
                 </Text>
 
             </View>
+            </ScrollableView>
     </View>
   );
 }

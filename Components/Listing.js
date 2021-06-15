@@ -18,7 +18,7 @@ export default function Listing() {
 const listingStyles = StyleSheet.create({
     listingContainer: {
         flexDirection: 'row',
-        width: '90%',
+        width: '95%',
         backgroundColor: 'pink',
         borderRadius: 20,
         padding: 15,
