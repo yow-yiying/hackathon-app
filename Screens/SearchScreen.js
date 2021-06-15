@@ -62,7 +62,7 @@ const App = () => {
   };
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ backgroundColor: 'white', flex: 1 }}>
       <View style={styles.container}>
         <TextInput
           style={styles.textInputStyle}
@@ -90,8 +90,9 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   textInputStyle: {
-    height: 40,
-    borderWidth: 1,
+    height: 50,
+    borderWidth: 2,
+    borderRadius: 10,
     paddingLeft: 20,
     margin: 5,
     borderColor: '#c9184a',

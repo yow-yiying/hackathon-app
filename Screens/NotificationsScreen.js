@@ -19,6 +19,7 @@ function NotificationsScreen() {
       };
 
   return (
+    <View style = {{backgroundColor: 'white', flex: 1}}>
     <ScrollView>
       {notifList.map((notif, index) => {
             return (
@@ -28,6 +29,7 @@ function NotificationsScreen() {
             );
           })}
     </ScrollView>
+    </View>
   );
 }
 
