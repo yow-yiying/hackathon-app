@@ -23,11 +23,11 @@ export default function App() {
             if (route.name === 'Home') {
               iconName = 'home';
             } else if (route.name === 'Explore') {
-              iconName = 'list';
+              iconName = 'search';
             } else if (route.name === 'Upload') {
-              iconName = focused ? 'user' : 'user-o';
+              iconName = focused ? 'plus-square' : 'plus-square-o';
             } else if (route.name === 'Notifications') {
-              iconName = focused ? 'user' : 'user-o';
+              iconName = focused ? 'bell' : 'bell-o';
             }  
 
             // You can return any component that you like here!
@@ -35,7 +35,7 @@ export default function App() {
           },
         })}
         tabBarOptions={{
-          activeTintColor: 'blue',
+          activeTintColor: '#c9184a',
           inactiveTintColor: 'gray',
         }}
       >
