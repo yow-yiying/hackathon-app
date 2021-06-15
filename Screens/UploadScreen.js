@@ -1,5 +1,5 @@
-import * as React from "react";
-import {Text, View, Button, StyleSheet, TextInput,Keyboard,KeyboardAvoidingView,SafeAreaView,ScrollView,TouchableWithoutFeedback} from "react-native";
+import React, {useState} from "react";
+import {Text, View, FlatList, Alert, Button, StyleSheet, TextInput,Keyboard,KeyboardAvoidingView,SafeAreaView,ScrollView,TouchableWithoutFeedback, TouchableOpacity} from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 //import style from "./style";
 import DoneButton from "../Components/DoneButton";
@@ -7,13 +7,24 @@ import DoneButton from "../Components/DoneButton";
 import { MaterialIcons } from '@expo/vector-icons'; 
 function UploadScreen() {
   const addBox = () =>{}
+  const pressHandler = () => {
+    Alert.alert('Confirm?','The listing cannot be deleted once created',[
+        {text: 'Confirm', onPress:()=> returnToHomeScreen },
+        {text: 'Cancel', style:'cancel'},
+    ])
+  }
+  const returnToHomeScreen = () => {
+      //navigate to home screen and save listing
+  }
   return ( 
-    <SafeAreaView>
+    
         <TouchableWithoutFeedback onPress={()=> Keyboard.dismiss()} accessible={false}>
-            <ScrollView keyboardShouldPersistTaps='handled'>
-                <View style={styles.pageContainer}>  
-                    <KeyboardAvoidingView
+            <ScrollView keyboardShouldPersistTaps='handled' style={styles.emptySpace} >
+            <KeyboardAvoidingView
                         behavior={Platform.select({ android: "height", ios: "padding" })}>
+                
+                <View style={styles.pageContainer}>  
+                    
                     <View style={styles.imageContainer}>
                         <Text style={styles.imageText}>Upload Your Image Here! </Text>
                         <MaterialIcons name='edit' size={25} onPress={addBox} color='black' style={styles.uploadPicture}/> 
@@ -40,8 +51,9 @@ function UploadScreen() {
                         <Text style={styles.timeText}>To</Text>
                         <View style={[styles.itemBox,styles.timeBox]}>
                             <TextInput
-                                placeholder={'To: 2359'} //defaulty numbers only
+                                placeholder={'To: 2359'} //
                                 keyboardType = 'numeric'
+                                
                             />
                         </View>
                     </View>
@@ -50,7 +62,8 @@ function UploadScreen() {
                         <View style={styles.itemHeader}>
                             <Text style={styles.itemText}>Items:</Text>
                             <MaterialIcons name='add' size={20} onPress={addBox} color='deeppink' /> 
-                        </View>    
+                        </View>
+            
                         <View style={styles.itemQuantityContainer}>
                             <TextInput
                                 style={[styles.itemBox,styles.itemTextBox]}
@@ -62,10 +75,10 @@ function UploadScreen() {
                                 keyboardType = 'numeric'
                             />
                         </View>
-                
+                        
                     </View>
 
-                    <View style={styles.itemContainer}>
+                    <View style={styles.messageContainer}>
                         <Text style={styles.itemText} >Message:</Text>
                         <TextInput
                             style={styles.itemBox}
@@ -73,13 +86,16 @@ function UploadScreen() {
                         />
                      </View>
                     <View style={{backgroundColor:'white'}}>
-                        <DoneButton/>
+                        <TouchableOpacity onPress={pressHandler}>
+                        <DoneButton onPress={pressHandler}/>
+                        </TouchableOpacity>
                     </View>
-                    </KeyboardAvoidingView>
+                    
                 </View>
+                </KeyboardAvoidingView>
             </ScrollView>  
         </TouchableWithoutFeedback>
-    </SafeAreaView>
+   
   );
 }
 
@@ -96,13 +112,17 @@ export default function UploadStack() {
 }
 
 const styles = StyleSheet.create({
-  pageContainer: {
+emptySpace:{
+    backgroundColor:'white'
+},
+pageContainer: {
     backgroundColor:'white',
     flex:1,
     flexDirection:'column',
     alignItems:'stretch',
     justifyContent: 'space-between',
     width:'100%',
+    
 },
 imageContainer:{
   borderRadius: 5,
@@ -179,5 +199,14 @@ quantityBox:{
   borderWidth: 2,
   borderColor: 'pink',
 },
+messageContainer: {
+    width:'100%',
+    height:100,
+    justifyContent:"space-evenly",
+    alignContent:'space-between',
+    backgroundColor:'white',
+    marginTop:-10,
+    marginBottom:10,
+  },
 
 });
