@@ -21,7 +21,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import DoneButton from "../Components/DoneButton";
 import { MaterialIcons } from "@expo/vector-icons";
 import ItemInput from "../Components/ItemInput";
-import Item from "../Components/Item";
+
 
 function UploadScreen() {
   const addBox = () => {};
@@ -37,11 +37,13 @@ function UploadScreen() {
 
   const [inputItem, setInputItem] = useState();
   const [items, setItemsArr] = useState([]);
+  const num = [0,1,2,3,4,5,6,7,8,9];
 
   const addItem = () => {
     Keyboard.dismiss();
     console.log(inputItem);
-    setItemsArr([...items, inputItem]);
+
+    setItemsArr([...items, inputItem],[num]);
     setInputItem('');
   };
   const { width, height } = Dimensions.get('window');
@@ -106,9 +108,9 @@ function UploadScreen() {
                 </TouchableOpacity>
               </View>
 
-              {items.map((inputItem, index) => {
+              {items.map((inputItem,index) => {
             return (
-                <ItemInput/>
+                <ItemInput key={index}/>
             );
           })}
             </View>
