@@ -1,5 +1,5 @@
 import * as React from "react";
-import {Text, View, Button, ScrollView} from "react-native";
+import {Text, View, Button, ScrollView,TouchableOpacity} from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import styles from './style.js';
 
@@ -8,6 +8,9 @@ import CancelButton from "../Components/CancelButton.js";
 import Listing from "../Components/Listing.js";
 
 function HomeScreen() {
+  const pressHandler =() => {
+    //navigate to detailsScreen
+  }
   return (
     <View style={[styles.appBackground, { flex: 1, justifyContent: 'center', alignItems: 'center' }]}>
       {/* <Text>Home!</Text>
@@ -17,11 +20,13 @@ function HomeScreen() {
       <View style = {styles.defaultContainer}>
         <Text style = {[styles.detailsText, {fontWeight: 'bold', paddingLeft: 10}]}>Corners near you:</Text>
         <ScrollView>
-          <Listing></Listing>
-          <Listing></Listing>
-          <Listing></Listing>
-          <Listing></Listing>
-          <Listing></Listing>
+          <TouchableOpacity onPress={pressHandler}>
+            <Listing></Listing>
+            <Listing></Listing>
+            <Listing></Listing>
+            <Listing></Listing>
+            <Listing></Listing>
+          </TouchableOpacity> 
         </ScrollView>
       </View>
     </View>
