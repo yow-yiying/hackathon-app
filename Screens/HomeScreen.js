@@ -2,7 +2,7 @@ import * as React from "react";
 import {Text, View, Button, ScrollView,TouchableOpacity} from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import styles from './style.js';
-
+import { Ionicons } from '@expo/vector-icons';
 import ListingDetailsScreen from './ListingDetailsScreen.js';
 import ItemInput from "../Components/ItemInput.js";
 import CancelButton from "../Components/CancelButton.js";
@@ -22,7 +22,12 @@ function HomeScreen({ navigation }) {
       <Listing></Listing>  
       <DoneButton></DoneButton>*/}
       <View style = {styles.defaultContainer}>
-        <Text style = {[styles.detailsText, {fontWeight: 'bold', paddingLeft: 10}]}>Corners near you:</Text>
+        <Text style = {
+          [styles.detailsText, 
+          {fontWeight: 'bold', paddingLeft: 10, paddingBottom: 15}
+          ]}>
+            <Ionicons name="location-sharp" size={27} color='#c9184a' /> Corners near you:
+            </Text>
         <ScrollView>
           <TouchableOpacity onPress={() => navigation.navigate("Details")}>
             <Listing></Listing>
@@ -43,7 +48,18 @@ const Stack = createStackNavigator();
 export default function HomeStack() {
     return (
     <Stack.Navigator>
-        <Stack.Screen name = "Home" component = {HomeScreen} />
+        <Stack.Screen name = "Home" component = {HomeScreen} 
+            options = {{ 
+              title: 'APP NAME',
+              headerRight: () => (
+                <View style = {{paddingRight: 10}}>
+                  <Ionicons name="person-circle" size={40} color='#c9184a' />
+                </View>
+              ),
+              // headerRight: () => (
+              //   <Ionicons name="person-circle" size={24} color="black" />
+              // )
+              }}/>
         <Stack.Screen name = "Details" component = {ListingDetailsScreen} />
     </Stack.Navigator>
     );

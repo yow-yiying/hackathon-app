@@ -16,10 +16,10 @@ export default function ListingDetailsScreen() {
             </View>
             <View style = {styles.detailsContainer}>
                 <Text style = {styles.detailsText}>
-                    <Ionicons style = {{ marginRight: 5 }} name="location-sharp" size={24} color="#c9184a"/>[Location]
+                    <Ionicons name="location-sharp" size={24} color="#c9184a"/>  [Location]
                 </Text>
                 <Text style = {styles.detailsText}>
-                    <Ionicons style = {{ marginRight: 5 }} name="time" size={24} color="#c9184a" />[Time]
+                    <Ionicons style = {{ marginRight: 5 }} name="time" size={24} color="#c9184a" />  [Time]
                 </Text>
                 <Text style = {styles.headers}>Items available:</Text>
                 {/* <Item></Item> */}
