@@ -32,13 +32,37 @@ export default function ListingDetailsScreen() {
                 </View>
                 <View style = {{margin: 5}}>
                     <Text style = {styles.headers}>Items available:</Text>
-                    <Item></Item>
+                    <View  style = {styles.item}>
+                        <Text style = {styles.itemText}>Item 1</Text>
+                        <Text  style = {styles.itemText}>10</Text>
+                    </View>
+
+                    <View style = {styles.item}>
+                        <Text style = {styles.itemText}>Item 2</Text>
+                        <Text style = {styles.itemText}>6</Text>
+                    </View>
                 </View>
 
                 <View style = {{margin: 5}}>
                     <Text style = {styles.headers}>Items requested:</Text>
-                    <ItemReq></ItemReq>
+                    
+                    <View style = {styles.item}>
+                        <Text style = {styles.itemText}>Item 3</Text>
+                        <Text style = {styles.itemText}>3</Text>
+                    </View>
+
+                    <View style = {styles.item}>
+                        <Text style = {styles.itemText}>Item 4</Text>
+                        <Text style = {styles.itemText}>1</Text>
+                    </View>
+
+                    <View style = {styles.item}>
+                        <Text style = {styles.itemText}>Item 5</Text>
+                        <Text style = {styles.itemText}>2</Text>
+                    </View>
                 </View>
+
+                
             </View>
             </ScrollView>
     </View>
@@ -86,6 +110,7 @@ const styles = StyleSheet.create({
         width: 200,
         height: 200,
         borderRadius: 10,
+        margin:10,
     },
     photoContainer: {
         justifyContent: 'center',
@@ -93,7 +118,20 @@ const styles = StyleSheet.create({
         flex: 1,
         width: '100%',
         height: '100%',
-    }
+    },
+    item: {
+        flexDirection: "row",
+        alignItems: "flex-end",
+        justifyContent: "space-between",
+        padding: 10,
+        backgroundColor: 'pink',
+        marginVertical: 8,
+        marginHorizontal: 16,
+        borderRadius: 10,
+      },
+    itemText: {
+        fontSize: 20,
+      },
 
 })
 
