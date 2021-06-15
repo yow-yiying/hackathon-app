@@ -94,20 +94,6 @@ function UploadScreen() {
             <View style={styles.itemContainer}>
               <View style={styles.itemHeader}>
                 <Text style={styles.itemText}>Items:</Text>
-              </View>
-
-              <TouchableOpacity onPress={() => addItem()}>
-                <MaterialIcons
-                  name="add"
-                  size={25}
-                  color="deeppink"
-                />
-                </TouchableOpacity>
-              
-              {items.map((inputItem, index) => {
-            return (
-                <View  key={index} style = {styles.oneItem}>
-                <ItemInput/>
 
                 <TouchableOpacity onPress={() => addItem()}>
                 <MaterialIcons
@@ -115,8 +101,12 @@ function UploadScreen() {
                   size={25}
                   color="deeppink"
                 />
-              </TouchableOpacity>
+                </TouchableOpacity>
               </View>
+
+              {items.map((inputItem, index) => {
+            return (
+                <ItemInput/>
             );
           })}
             </View>
@@ -206,7 +196,7 @@ const styles = StyleSheet.create({
   },
   itemContainer: {
     width: "100%",
-    height: 100,
+    
     //height: 100,
     justifyContent: "space-evenly",
     alignContent: "space-between",
@@ -229,26 +219,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: 'center',
     margin: 5,
-  },
-  itemQuantityContainer: {
-    flexDirection: "row",
-  },
-  itemTextBox: {
-    width: "60%",
-  },
-  quantityTextBox: {
-    flexGrow: 1,
-  },
-  quantityBox: {
-    paddingHorizontal: 10,
-    paddingVertical: 10,
-    height: 40,
-    backgroundColor: "rgb(255, 255, 255)",
-    borderRadius: 5,
-    margin: 10,
-    width: "25%",
-    borderWidth: 2,
-    borderColor: "pink",
   },
   messageContainer: {
     width: "100%",
