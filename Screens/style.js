@@ -10,26 +10,32 @@ export default StyleSheet.create({
     tabNavigator: {
 
     },
-    listingContainer: {
+    // listingContainer: {
 
-    },
-    listingCornerName: {
+    // },
+    // listingCornerName: {
 
-    },
-    listingOtherText: {
+    // },
+    // listingOtherText: {
 
-    },
-    listingPhoto: {
+    // },
+    // listingPhoto: {
 
-    }, 
+    // }, 
     detailsCornerName: {
 
     },
     detailsContainer: {
 
     },
+    defaultContainer: {
+        flex: 1,
+        width: "90%",
+        alignText: 'right',
+        
+    },
     detailsText: {
-
+        fontSize: 20,
     },
     itemContainer: {
 
