@@ -22,11 +22,11 @@ function HomeScreen() {
         <ScrollView>
           <TouchableOpacity onPress={pressHandler}>
             <Listing></Listing>
+          </TouchableOpacity>
             <Listing></Listing>
             <Listing></Listing>
             <Listing></Listing>
             <Listing></Listing>
-          </TouchableOpacity> 
         </ScrollView>
       </View>
     </View>
