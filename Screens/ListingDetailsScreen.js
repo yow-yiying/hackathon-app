@@ -83,8 +83,8 @@ const styles = StyleSheet.create({
     },
     detailsPhoto: {
         flexDirection: 'row',
-        width: '90%',
-        height: '100%',
+        width: 200,
+        height: 200,
         borderRadius: 10,
     },
     photoContainer: {
