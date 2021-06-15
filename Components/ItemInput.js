@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     margin: 10,
     borderWidth: 2,
     width: "60%",
-    borderColor: "rgb(174, 182, 191)",
+    borderColor: "pink",
   },
   quantityBox: {
     paddingHorizontal: 10,
@@ -57,6 +57,6 @@ const styles = StyleSheet.create({
     margin: 10,
     width: "25%",
     borderWidth: 2,
-    borderColor: "rgb(174, 182, 191)",
+    borderColor: "pink",
   },
 });
