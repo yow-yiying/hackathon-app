@@ -30,9 +30,10 @@ export default StyleSheet.create({
     },
     defaultContainer: {
         flex: 1,
-        width: "90%",
-        alignText: 'right',
-        
+        width: "98%",
+        // alignText: 'right',
+        padding: 10,
+        margin: 10,
     },
     detailsText: {
         fontSize: 20,

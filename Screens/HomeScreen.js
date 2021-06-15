@@ -15,7 +15,7 @@ function HomeScreen() {
       <CancelButton></CancelButton>
       <Listing></Listing>  */}
       <View style = {styles.defaultContainer}>
-        <Text style = {[styles.detailsText, {paddingLeft: 10}]}>Corners near you:</Text>
+        <Text style = {[styles.detailsText, {fontWeight: 'bold', paddingLeft: 10}]}>Corners near you:</Text>
         <ScrollView>
           <Listing></Listing>
           <Listing></Listing>
