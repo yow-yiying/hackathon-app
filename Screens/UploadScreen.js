@@ -22,7 +22,6 @@ import DoneButton from "../Components/DoneButton";
 import { MaterialIcons } from "@expo/vector-icons";
 import ItemInput from "../Components/ItemInput";
 import Item from "../Components/Item";
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 function UploadScreen() {
   const addBox = () => {};
