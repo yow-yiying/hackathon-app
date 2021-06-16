@@ -27,7 +27,6 @@ function HomeScreen({ navigation }) {
       time: "0900-1900",
       message: "Please only take What you need and be considerate",
       picture: require("../assets/foodDrive.png"),
-      requestedItems: "Pasta",
       itemsAvailable: [
         { itemName: "Myojo Mee Goreng Original", quantity: 20 },
         { itemName: "Sunshine Butter Bread", quantity: 10 },
@@ -48,8 +47,8 @@ function HomeScreen({ navigation }) {
       time: "0900-1900",
       message: "NIL",
       picture: require("../assets/handSan.jpeg"),
-      requestedItems: "",
-      items: [],
+      itemsAvailable: [{}],
+      itemsRequested: [{ }],
     },
 
     {
@@ -59,8 +58,8 @@ function HomeScreen({ navigation }) {
       time: "0900-1900",
       message: "NIL",
       picture: require("../assets/june.jpeg"),
-      requestedItems: "",
-      items: [],
+      itemsAvailable: [{}],
+      itemsRequested: [{}],
     },
 
     {
@@ -70,8 +69,8 @@ function HomeScreen({ navigation }) {
       time: "1400-1600",
       message: "NIL",
       picture: require("../assets/snacks.jpeg"),
-      requestedItems: "",
-      items: [],
+      itemsAvailable: [{}],
+      itemsRequested: [{ }],
     },
 
     {
@@ -81,9 +80,10 @@ function HomeScreen({ navigation }) {
       time: "1100-2000",
       message: "NIL",
       picture: require("../assets/niceDay.jpeg"),
-      requestedItems: "",
-      items: [],
+      itemsAvailable: [{}],
+      itemsRequested: [{ }],
     },
+    
   ];
 
   const [listings, addListing] = useState(fakeData);
@@ -122,6 +122,8 @@ function HomeScreen({ navigation }) {
                 location={item.location}
                 time={item.time}
                 picture={item.picture}
+                itemsAvailable = {item.itemsAvailable}
+                itemsRequested = {item.itemsRequested}
               ></Listing>
             </TouchableOpacity>
           )}

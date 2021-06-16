@@ -14,6 +14,7 @@ import Item from "../Components/Item.js";
 import ItemReq from "../Components/ItemReq.js";
 import { render } from "react-dom";
 
+
 export default function ListingDetailsScreen({ route, navigation }) {
   const { name, location, time, message, picture, itemsAvailable, itemsRequested } = route.params;
 
@@ -29,7 +30,7 @@ export default function ListingDetailsScreen({ route, navigation }) {
         <View style={styles.photoContainer}>
           <Image
             style={styles.detailsPhoto}
-            source={{ uri: "https://wallpaperaccess.com/full/1261215.jpg" }}
+            source={picture}
           />
         </View>
         <View style={styles.detailsContainer}>

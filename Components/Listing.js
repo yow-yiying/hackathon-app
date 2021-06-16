@@ -3,7 +3,7 @@ import { View, Text, Image, StyleSheet} from "react-native";
 import { Ionicons } from '@expo/vector-icons';
 
 // {uri: "https://wallpaperaccess.com/full/1261215.jpg"}
-export default function Listing( {name, location, time, picture}) {
+export default function Listing( {name, location, time, picture,itemsAvailable, itemsRequested}) {
     return (
         <View style = {listingStyles.listingContainer}>
             <Image style = {listingStyles.listingPhoto}
@@ -47,16 +47,17 @@ const listingStyles = StyleSheet.create({
     }
 })
 
-const fakeData =[ //name, location, time, messagem requestedItems,items,
+const fakedata =[ //name, location, time, messagem requestedItems,items,
     {name:'Food Drive',location:'208 Ang Mo Kio Ave 1, Singapore 560208',time:'0900-1900', message:'Please only take What you need and be considerate',
-    picture:require('../assets/foodDrive.png'),requestedItems:'Pasta', items:[
+    picture:require('../assets/foodDrive.png'),requestedItems:
+    [ {itemName:'Halal Pork Luncheon Meat ',quantity:5,},
+    {itemName:'Baked Beans',quantity:5,},
+    {itemName:'Rice (1kg)',quantity:5,},],
+    items:[
         {itemName:'Myojo Mee Goreng Original',quantity:20,},
         {itemName:'Sunshine Butter Bread',quantity: 10,},
         {itemName:'Ayam Brand Canned Sardines',quantity:5,},
         {itemName:'Campbell Chicken Soup',quantity:5,},
-        {itemName:'Halal Pork Luncheon Meat ',quantity:5,},
-        {itemName:'Baked Beans',quantity:5,},
-        {itemName:'Rice (1kg)',quantity:5,},
     ]},
 
     {name:'Hand Sanitiser Galore',location:'253 Ang Mo Kio Street 21, Block 253, Singapore 560253',time:'0900-1900', message:'NIL',picture:require('../assets/handSan.jpeg'),requestedItems:'',items:[]},

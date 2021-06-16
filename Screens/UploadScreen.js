@@ -24,7 +24,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import ItemInput from "../Components/ItemInput";
 
 
-function UploadScreen() {
+function UploadScreen({navigation}) {
   const pressHandler = () => {
     Alert.alert("Note", "The listing will be automatically deleted once it reaches [time] today!", [
       { text: "Confirm", onPress: () => returnToHomeScreen },
@@ -32,7 +32,7 @@ function UploadScreen() {
     ]);
   };
   const returnToHomeScreen = () => {
-    //navigate to home screen and save listing
+    //navigation.navigate('HomeScreen')
   };
 
   const [inputItem, setInputItem] = useState();
