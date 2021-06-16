@@ -59,8 +59,8 @@ function UploadScreen({navigation}) {
         
           <View style={styles.pageContainer}>
             <View style={styles.imageContainer}>
-              <Text style={styles.imageText}>Upload Your Image Here! </Text>
-              <Ionicons name="image" size={24} color="black" style = {styles.uploadPicture} />
+            <Ionicons name="image" size={24} color="black" style = {styles.uploadPicture} />
+              <Text style={styles.imageText}> Upload Your Image Here! </Text>
               {/* <TouchableOpacity>    
                 <MaterialIcons
                   name="edit"

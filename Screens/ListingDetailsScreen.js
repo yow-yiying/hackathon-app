@@ -42,7 +42,7 @@ export default function ListingDetailsScreen({ route, navigation }) {
         </View>
         <View style={styles.detailsContainer}>
           <Text style={styles.detailsText}>
-            <Ionicons name="location-sharp" size={24} color="#c9184a" />{" "}
+            <Ionicons name="location-sharp" size={24} color="#c9184a" />
             {location}
           </Text>
           <Text style={styles.detailsText}>
