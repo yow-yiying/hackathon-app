@@ -1,42 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { SafeAreaView, Text, StyleSheet, View, FlatList, TextInput, Image} from 'react-native';
 import { createStackNavigator } from "@react-navigation/stack";
-
+import { Entypo } from '@expo/vector-icons';
 
 const App = () => {
   const [search, setSearch] = useState('');
   const [filteredDataSource, setFilteredDataSource] = useState([]);
   const [masterDataSource, setMasterDataSource] = useState([]);
-
-  useEffect(() => {
-    fetch('https://mockend.com/org/repo/tree/main/Screens')
-      .then((response) => response.json())
-      .then((responseJson) => {
-        setFilteredDataSource(responseJson);
-        setMasterDataSource(responseJson);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
-
-  const searchFilterFunction = (text) => {
-    if (text) {
-      const newData = masterDataSource.filter(function (item) {
-        const itemData = item.title
-          ? item.title.toUpperCase()
-          : ''.toUpperCase();
-        const textData = text.toUpperCase();
-        return itemData.indexOf(textData) > -1;
-      });
-      setFilteredDataSource(newData);
-      setSearch(text);
-    } else {
-      setFilteredDataSource(masterDataSource);
-      setSearch(text);
-    }
-  };
-
+  
   const ItemView = ({ item }) => {
     return (
       <Text style={styles.itemStyle} onPress={() => getItem(item)}>
@@ -80,6 +51,17 @@ const App = () => {
           renderItem={ItemView}
         />
       </View>
+      <Text style = {styles.RecentSearchStyle}>Recent Searches:</Text> 
+      <Text style = {styles.RecentSearchResultStyle}><Entypo name="back-in-time" size={24} color="#696969" /> Hand sanitizers</Text>
+      <Text style = {styles.RecentSearchResultStyle}><Entypo name="back-in-time" size={24} color="#696969" /> Ang Mo Kio</Text>
+      <Text style = {styles.RecentSearchResultStyle}><Entypo name="back-in-time" size={24} color="#696969" /> Chinatown Booth Blk 467</Text>
+      <Text style = {styles.RecentSearchResultStyle}><Entypo name="back-in-time" size={24} color="#696969" /> Downtown Booth Blk 749</Text>
+      <Text style = {styles.RecentSearchResultStyle}><Entypo name="back-in-time" size={24} color="#696969" /> Yio chu kang</Text>
+      <Text style = {styles.RecentSearchResultStyle}><Entypo name="back-in-time" size={24} color="#696969" /> Farrer Park Booth MRT Exit A</Text>
+      <Text style = {styles.RecentSearchResultStyle}><Entypo name="back-in-time" size={24} color="#696969" /> Geylang Booth Blk 43</Text>
+      <Text style = {styles.RecentSearchResultStyle}><Entypo name="back-in-time" size={24} color="#696969" /> Holland Village Booth Blk 433</Text>
+      <Text style = {styles.RecentSearchResultStyle}><Entypo name="back-in-time" size={24} color="#696969" /> Snack booth</Text>
+      <Text style = {styles.RecentSearchResultStyle}><Entypo name="back-in-time" size={24} color="#696969" /> King Albert Park Booth MRT Exit A</Text>
     </SafeAreaView>
   );
 };
@@ -94,13 +76,30 @@ const styles = StyleSheet.create({
   textInputStyle: {
     height: 50,
     borderWidth: 2,
-    borderRadius: 10,
     paddingLeft: 20,
+    borderRadius: 10,
     margin: 15,
     borderColor: '#c9184a',
     backgroundColor: '#FFFFFF',
   },
+  RecentSearchStyle: {
+    color: "black",
+    paddingLeft: 20,
+    paddingBottom: 10,
+    fontWeight: "bold",
+    fontSize: 18,
+    lineHeight: 30
+  },
+  RecentSearchResultStyle:{
+    color: "#696969",
+    padding: 5,
+    paddingLeft: 20,
+    lineHeight: 30,
+    fontSize: 18
+  }
 });
+
+// export default App;
 
 const Stack = createStackNavigator();
 
