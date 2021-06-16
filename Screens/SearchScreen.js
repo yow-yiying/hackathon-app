@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { SafeAreaView, Text, StyleSheet, View, FlatList, TextInput} from 'react-native';
+import { createStackNavigator } from "@react-navigation/stack";
+
 
 const App = () => {
   const [search, setSearch] = useState('');
@@ -100,4 +102,15 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+const Stack = createStackNavigator();
+
+export default function SearchStack() {
+    return (
+    <Stack.Navigator>
+        <Stack.Screen name = "Explore" component = {App} />
+        {/* <Stack.Screen name = "HomeSecondScreen" component = {HomeSecondScreen} /> */}
+    </Stack.Navigator>
+    );
+}
+
+// export default App;
