@@ -26,7 +26,7 @@ import ItemInput from "../Components/ItemInput";
 
 function UploadScreen() {
   const pressHandler = () => {
-    Alert.alert("Confirm", "The listing cannot be deleted once created", [
+    Alert.alert("Note", "The listing will be automatically deleted once it reaches [time] today!", [
       { text: "Confirm", onPress: () => returnToHomeScreen },
       { text: "Cancel", style: "cancel" },
     ]);

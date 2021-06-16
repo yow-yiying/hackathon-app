@@ -1,7 +1,7 @@
 {
     "Item": {
-        "userId": "int",
-        "id": "int",
-        "title": "string"
+        "userId": "WOOFWOOF",
+        "id": "1",
+        "title": "Whats up"
     }
 }

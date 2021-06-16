@@ -5,7 +5,7 @@ import styles from "./style.js";
 import Notification from "../Components/Notification.js";
 
 function NotificationsScreen() {
-  var text1 = "MEOWMEOW52 has fulfilled your request at 244 Ang Mo Kio Ave 3";
+  var text1 = "MEOWMEOW52 has fulfilled your item request at 244 Ang Mo Kio Ave 3";
   var text2 = 'Kindness Corner near you at 44A Ang Mo Kio has closed';
   var text3 = 'Kindness Corner near you at 123 Light Vista has opened';
   var text4 = 'CHOCBREAD123 has fulfilled your item request at 158 Yio Chu Kang Ave 1';
