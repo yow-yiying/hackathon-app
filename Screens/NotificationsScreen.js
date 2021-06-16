@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Text, View, Button, ScrollView, TouchableOpacity } from "react-native";
+import { Text, View, Button, ScrollView, TouchableOpacity, Image } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import styles from "./style.js";
 import Notification from "../Components/Notification.js";
@@ -43,18 +43,12 @@ export default function NotificationsStack() {
         name="Notifications" 
         component={NotificationsScreen} 
         options={{
-          title: "APP NAME",
-          headerRight: () => (
-            <View style={{ paddingRight: 10 }}>
-              {/* <Ionicons name="person-circle" size={40} color="#c9184a" /> */}
-              {/* <Image style = {{width:10, height:10}} source = {require('../assets/logo.png')}/> */}
+          title: "Notifications",
+          headerLeft: () => (
+            <View style = {{paddingLeft: 20}}>
+              <Image style = {{width: 70, height: 150,resizeMode:'contain',flex:1}} source = {require("../assets/logo.png")}/> 
             </View>
           ),
-        // options= {{
-        //   headerLeft: () => (
-        //     <Image style = {{width:10, height:10}} source = {require('../assets/logo.png')}/>
-        //   )
-        // }}
           }}
         />
       {/* <Stack.Screen name = "HomeSecondScreen" component = {HomeSecondScreen} /> */}

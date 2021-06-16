@@ -15,6 +15,7 @@ import {
   TouchableWithoutFeedback,
   TouchableOpacity,
   Dimensions,
+  Image,
 } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 //import style from "./style";
@@ -145,7 +146,18 @@ const Stack = createStackNavigator();
 export default function UploadStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Upload" component={UploadScreen} />
+      <Stack.Screen 
+        name="Upload" 
+        component={UploadScreen} 
+        options={{
+            title: "Upload",
+            headerLeft: () => (
+              <View style = {{paddingLeft: 20}}>
+                <Image style = {{width: 70, height: 150,resizeMode:'contain',flex:1}} source = {require("../assets/logo.png")}/> 
+              </View>
+            ),
+          }}
+        />
       {/* <Stack.Screen name = "HomeSecondScreen" component = {HomeSecondScreen} /> */}
     </Stack.Navigator>
   );

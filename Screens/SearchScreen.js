@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { SafeAreaView, Text, StyleSheet, View, FlatList, TextInput} from 'react-native';
+import { SafeAreaView, Text, StyleSheet, View, FlatList, TextInput, Image} from 'react-native';
 import { createStackNavigator } from "@react-navigation/stack";
 
 
@@ -107,7 +107,18 @@ const Stack = createStackNavigator();
 export default function SearchStack() {
     return (
     <Stack.Navigator>
-        <Stack.Screen name = "Explore" component = {App} />
+        <Stack.Screen 
+            name = "Explore" 
+            component = {App} 
+            options={{
+                title: "Explore",
+                headerLeft: () => (
+                  <View style = {{paddingLeft: 20}}>
+                    <Image style = {{width: 70, height: 150,resizeMode:'contain',flex:1}} source = {require("../assets/logo.png")}/> 
+                  </View>
+                ),
+              }}
+            />
         {/* <Stack.Screen name = "HomeSecondScreen" component = {HomeSecondScreen} /> */}
     </Stack.Navigator>
     );

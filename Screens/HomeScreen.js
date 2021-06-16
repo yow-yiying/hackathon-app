@@ -23,6 +23,22 @@ import { MaterialIcons } from '@expo/vector-icons';
 function HomeScreen({ navigation }) {
   const fakeData = [
     //name, location, time, messagem requestedItems,items,
+
+    
+    // {
+    //   key: "6",
+    //   name: "Soup Fest",
+    //   location: "103 Ang Mo Kio Ave 3, Block 103, Singapore 560103",
+    //   time: "1000-2200",
+    //   message: "A can of soup a day keeps the doctor away",
+    //   picture: require("../assets/soupFest.jpeg"),
+    //   itemsAvailable: [
+    //     { itemName: "Campbell Mushroom Soup", quantity: 5 },
+    //     { itemName: "Campbell Chicken Soup", quantity: 10 },
+    //     { itemName: "Campbell Clam Chowder Soup", quantity: 5 },
+    //   ],
+    //   itemsRequested: [{ itemName: "Vegetable Soup" }],
+    // },
     {
       key: "1",
       name: "Food Drive",
@@ -86,20 +102,7 @@ function HomeScreen({ navigation }) {
       itemsAvailable: [{}],
       itemsRequested: [{}],
     },
-    {
-      key: "6",
-      name: "Soup Fest",
-      location: "103 Ang Mo Kio Ave 3, Block 103, Singapore 560103",
-      time: "1000-2200",
-      message: "A can of soup a day keeps the doctor away",
-      picture: require("../assets/soupFest.jpeg"),
-      itemsAvailable: [
-        { itemName: "Campbell Mushroom Soup", quantity: 5 },
-        { itemName: "Campbell Chicken Soup", quantity: 10 },
-        { itemName: "Campbell Clam Chowder Soup", quantity: 5 },
-      ],
-      itemsRequested: [{ itemName: "Vegetable Soup" }],
-    },
+
     {
       key: "7",
       name: "Free Drinks For Our Deliver/Healthcare Workers",
@@ -197,7 +200,7 @@ function HomeScreen({ navigation }) {
 
       <View style={styles.defaultContainer}>
         <Text style={[styles.detailsText, { fontWeight: "bold", padding: 15 }]}>
-          <Ionicons name="location-sharp" size={27} color="#c9184a" /> Corners
+          <Ionicons name="location-sharp" size={27} color="#c9184a" /> Kindness Corners
           near you:
         </Text>
         <FlatList
