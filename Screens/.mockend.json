@@ -1,14 +1,42 @@
-{
-    "Item": [
+[
     {
-        "userId": "WOOFWOOF",
-        "id": "1",
-        "title": "Whats up"
+      "id": "1",
+      "title": "Ang Mo Kio Booth Blk 204"
     },
     {
-        "userId": "Hello",
-        "id": "1",
-        "title": "testing"
+      "id": "2",
+      "title": "Bedok Booth Blk 315"
+    },
+    {
+      "id": "3",
+      "title": "Chinatown Booth Blk 467"
+    },
+    {
+      "id": "4",
+      "title": "Downtown Booth Blk 749"
+    },
+    {
+      "id": "5",
+      "title": "East Coast Booth Blk 321"
+    },
+      {
+      "id": "6",
+      "title": "Farrer Park Booth MRT Exit A"
+    },
+      {
+      "id": "7",
+      "title": "Geylang Booth Blk 43"
+    },
+      {
+      "id": "8",
+      "title": "Holland Village Booth Blk 433"
+    },
+      {
+      "id": "9",
+      "title": "Jurong West Booth Blk 410"
+    },
+      {
+      "id": "10",
+      "title": "King Albert Park Booth MRT Exit A"
     }
-    ]
-}
+  ]
