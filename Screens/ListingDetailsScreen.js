@@ -6,6 +6,7 @@ import {
   Button,
   ScrollView,
   StyleSheet,
+  TouchableOpacity,
 } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { Entypo } from "@expo/vector-icons";
@@ -13,10 +14,18 @@ import { Ionicons } from "@expo/vector-icons";
 import Item from "../Components/Item.js";
 import ItemReq from "../Components/ItemReq.js";
 import { render } from "react-dom";
-
+import { Feather } from "@expo/vector-icons";
 
 export default function ListingDetailsScreen({ route, navigation }) {
-  const { name, location, time, message, picture, itemsAvailable, itemsRequested } = route.params;
+  const {
+    name,
+    location,
+    time,
+    message,
+    picture,
+    itemsAvailable,
+    itemsRequested,
+  } = route.params;
 
   return (
     <View
@@ -25,13 +34,15 @@ export default function ListingDetailsScreen({ route, navigation }) {
         { flex: 1, justifyContent: "center", alignItems: "center" },
       ]}
     >
-      <Text style={styles.detailsCornerName}>{name}</Text>
+      <View style={styles.header}>
+        <Text style={styles.detailsCornerName}>{name}</Text>
+        <TouchableOpacity style = {styles.editIcon}>
+          <Feather name="edit" size={24} color="black" />
+        </TouchableOpacity>
+      </View>
       <ScrollView>
         <View style={styles.photoContainer}>
-          <Image
-            style={styles.detailsPhoto}
-            source={picture}
-          />
+          <Image style={styles.detailsPhoto} source={picture} />
         </View>
         <View style={styles.detailsContainer}>
           <Text style={styles.detailsText}>
@@ -53,30 +64,28 @@ export default function ListingDetailsScreen({ route, navigation }) {
           </View>
           <View style={{ margin: 5 }}>
             <Text style={styles.headers}>Items available:</Text>
-  
-            {itemsAvailable.map((oneItem,index) => {
-            return (
+
+            {itemsAvailable.map((oneItem, index) => {
+              return (
                 <View key={index} style={styles.item}>
-                    <Text style={styles.itemText}>{oneItem.itemName}</Text>
-              <Text style={styles.itemText}>{oneItem.quantity}</Text>
+                  <Text style={styles.itemText}>{oneItem.itemName}</Text>
+                  <Text style={styles.itemText}>{oneItem.quantity}</Text>
                 </View>
-            );
-          })}   
-    
+              );
+            })}
           </View>
 
           <View style={{ margin: 5 }}>
             <Text style={styles.headers}>Items requested:</Text>
-            
-            {itemsRequested.map((oneItem,index) => {
-            return (
+
+            {itemsRequested.map((oneItem, index) => {
+              return (
                 <View key={index} style={styles.item}>
-                    <Text style={styles.itemText}>{oneItem.itemName}</Text>
-              <Text style={styles.itemText}>{oneItem.quantity}</Text>
+                  <Text style={styles.itemText}>{oneItem.itemName}</Text>
+                  <Text style={styles.itemText}>{oneItem.quantity}</Text>
                 </View>
-            );
-          })}  
-            
+              );
+            })}
           </View>
         </View>
       </ScrollView>
@@ -91,10 +100,18 @@ const styles = StyleSheet.create({
   appBackground: {
     backgroundColor: "white",
   },
+  header: {
+    flexDirection: "row",
+    width: '100%',
+    justifyContent: "space-between",
+    alignItems: 'center',
+    paddingLeft: 10,
+    paddingRight: 10,
+  },
   detailsCornerName: {
     fontSize: 30,
     fontWeight: "bold",
-    margin: 10,
+    margin: 5,
   },
   detailsContainer: {
     flex: 1,
