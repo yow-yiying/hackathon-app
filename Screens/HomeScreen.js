@@ -34,9 +34,9 @@ function HomeScreen({ navigation }) {
         { itemName: "Campbell Chicken Soup", quantity: 5 },
       ],
       itemsRequested: [
-        { itemName: "Halal Pork Luncheon Meat ", quantity: 5 },
-        { itemName: "Baked Beans", quantity: 5 },
-        { itemName: "Rice (1kg)", quantity: 5 },
+        { itemName: "Halal Pork Luncheon Meat " },
+        { itemName: "Baked Beans" },
+        { itemName: "Rice (1kg)" },
       ],
     },
 
@@ -90,8 +90,14 @@ function HomeScreen({ navigation }) {
       time: "1000-2200",
       message: "A can of soup a day keeps the doctor away",
       picture: require("../assets/soupFest.jpeg"),
-      itemsAvailable: [{}],
-      itemsRequested: [{}],
+      itemsAvailable: [
+        { itemName: "Campbell Mushroom Soup", quantity: 5 },
+        { itemName: "Campbell Chicken Soup", quantity: 10 },
+        { itemName: "Campbell Clam Chowder Soup", quantity: 5 },
+      ],
+      itemsRequested: [
+        { itemName: "Vegetable Soup" },
+      ],
     },
     {
       key: "7",
