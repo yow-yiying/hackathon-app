@@ -19,6 +19,7 @@ import CancelButton from "../Components/CancelButton.js";
 import Listing from "../Components/Listing.js";
 import DoneButton from "../Components/DoneButton.js";
 import { MaterialIcons } from '@expo/vector-icons';
+import {logo} from '../assets/logo.png';
 
 function HomeScreen({ navigation }) {
   const fakeData = [
@@ -245,13 +246,12 @@ export default function HomeStack() {
           title: "DoNation",
           headerLeft: () => (
             <View style = {{paddingLeft: 20}}>
-              <Image style = {{width: 70, height: 50}} source = {require("../assets/logo.PNG")}/>
+              <Image style = {{width: 70, height: 150,resizeMode:'contain',flex:1}} source = {require("../assets/logo.png")}/>
             </View>
           ),
           headerRight: () => (
             <View style={{ paddingRight: 10 }}>
               <Ionicons name="person-circle" size={40} color="#c9184a" />
-              {/* <Image source = {require('../assets/logo.png')}/> */}
             </View>
           ),
           // headerRight: () => (
