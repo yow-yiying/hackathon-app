@@ -7,6 +7,7 @@ import {
   ScrollView,
   TouchableOpacity,
   FlatList,
+  Image,
 } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import styles from "./style.js";
@@ -190,9 +191,15 @@ export default function HomeStack() {
         component={HomeScreen}
         options={{
           title: "APP NAME",
+          // headerLeft: () => (
+          //   <View style = {{paddingLeft: 10}}>
+          //     <Image source = {require('../assets/logo.png')}/>
+          //   </View>
+          // ),
           headerRight: () => (
             <View style={{ paddingRight: 10 }}>
               <Ionicons name="person-circle" size={40} color="#c9184a" />
+              {/* <Image source = {require('../assets/logo.png')}/> */}
             </View>
           ),
           // headerRight: () => (
