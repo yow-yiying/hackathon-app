@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   FlatList,
   Image,
+  Modal,
 } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import styles from "./style.js";
@@ -71,7 +72,7 @@ function HomeScreen({ navigation }) {
       message: "NIL",
       picture: require("../assets/snacks.jpeg"),
       itemsAvailable: [{}],
-      itemsRequested: [{ }],
+      itemsRequested: [{}],
     },
 
     {
@@ -96,9 +97,7 @@ function HomeScreen({ navigation }) {
         { itemName: "Campbell Chicken Soup", quantity: 10 },
         { itemName: "Campbell Clam Chowder Soup", quantity: 5 },
       ],
-      itemsRequested: [
-        { itemName: "Vegetable Soup" },
-      ],
+      itemsRequested: [{ itemName: "Vegetable Soup" }],
     },
     {
       key: "7",
@@ -120,7 +119,6 @@ function HomeScreen({ navigation }) {
       itemsAvailable: [{}],
       itemsRequested: [{}],
     },
-    
   ];
 
   const [listings, addListing] = useState(fakeData);
@@ -136,6 +134,8 @@ function HomeScreen({ navigation }) {
     );
   }
 
+  const [modalVisible, setModalVisible] = useState(true);
+
   return (
     <View
       style={[
@@ -143,6 +143,55 @@ function HomeScreen({ navigation }) {
         { flex: 1, justifyContent: "center", alignItems: "center" },
       ]}
     >
+      <View style={styles.centeredView}>
+        <Modal transparent={true} visible={modalVisible}>
+          <View
+            style={{
+              flex: 1,
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <View
+              style={{
+                flex: 1,
+                width: "100%",
+                backgroundColor: "white",
+                borderRadius: 20,
+                padding: 30,
+                alignItems: "center",
+                shadowColor: "#000",
+              }}
+            >
+              <Text style={styles.modalText}>Welcome to Donation!</Text>
+              <TouchableOpacity
+                style={{
+                  borderRadius: 20,
+                  padding: 10,
+                  elevation: 2,
+                  backgroundColor: "pink",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+                onPress={() => setModalVisible(false)}
+              >
+                <Text
+                  style={{
+                    color: "white",
+                    fontWeight: "bold",
+                    textAlign: "center",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  Home Screen
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </Modal>
+      </View>
+
       <View style={styles.defaultContainer}>
         <Text style={[styles.detailsText, { fontWeight: "bold", padding: 15 }]}>
           <Ionicons name="location-sharp" size={27} color="#c9184a" /> Corners
@@ -159,8 +208,8 @@ function HomeScreen({ navigation }) {
                 location={item.location}
                 time={item.time}
                 picture={item.picture}
-                itemsAvailable = {item.itemsAvailable}
-                itemsRequested = {item.itemsRequested}
+                itemsAvailable={item.itemsAvailable}
+                itemsRequested={item.itemsRequested}
               ></Listing>
             </TouchableOpacity>
           )}
