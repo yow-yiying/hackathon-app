@@ -103,7 +103,7 @@ function UploadScreen({navigation}) {
                 <MaterialIcons
                   name="add"
                   size={25}
-                  color="#c9184a"
+                  color="black"
                 />
                 </TouchableOpacity>
               </View>
