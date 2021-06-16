@@ -18,6 +18,7 @@ import ItemInput from "../Components/ItemInput.js";
 import CancelButton from "../Components/CancelButton.js";
 import Listing from "../Components/Listing.js";
 import DoneButton from "../Components/DoneButton.js";
+import { MaterialIcons } from '@expo/vector-icons';
 
 function HomeScreen({ navigation }) {
   const fakeData = [
@@ -140,7 +141,7 @@ function HomeScreen({ navigation }) {
     <View
       style={[
         styles.appBackground,
-        { flex: 1, justifyContent: "center", alignItems: "center" },
+        { flex: 1, justifyContent: "center", alignContent: "center" },
       ]}
     >
       <View style={styles.centeredView}>
@@ -163,29 +164,31 @@ function HomeScreen({ navigation }) {
                 shadowColor: "#000",
               }}
             >
-              <Text style={styles.modalText}>Welcome to Donation!</Text>
+              <Text style={{marginTop:400,fontSize: 20,}}>Welcome to Donation!</Text>
               <TouchableOpacity
                 style={{
                   borderRadius: 20,
                   padding: 10,
                   elevation: 2,
-                  backgroundColor: "pink",
-                  justifyContent: "center",
-                  alignItems: "center",
+                  backgroundColor: "#c9184a",
+                  marginTop:10,
                 }}
                 onPress={() => setModalVisible(false)}
               >
+                <View style={{flexDirection:'row-reverse', alignItems:'center'}}>
                 <Text
                   style={{
+                    fontSize: 20,
                     color: "white",
                     fontWeight: "bold",
                     textAlign: "center",
                     justifyContent: "center",
                     alignItems: "center",
+                    
                   }}
-                >
-                  Home Screen
-                </Text>
+                >Home</Text>
+                <MaterialIcons name='home' size={22} color='white' />
+                </View>
               </TouchableOpacity>
             </View>
           </View>
