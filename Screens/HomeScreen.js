@@ -24,7 +24,7 @@ function HomeScreen({ navigation }) {
   const fakeData = [
     //name, location, time, messagem requestedItems,items,
 
-    
+
     // {
     //   key: "6",
     //   name: "Soup Fest",
@@ -164,10 +164,12 @@ function HomeScreen({ navigation }) {
                 borderRadius: 20,
                 padding: 30,
                 alignItems: "center",
+                justifyContent: "center",
                 shadowColor: "#000",
               }}
             >
-              <Text style={{marginTop:400,fontSize: 20,}}>Welcome to Donation!</Text>
+              <Image style = {{width: 300, height: 200, margin: 80}} source = {require("../assets/biglogo.png")}/>
+              {/* <Text style={{marginTop:400,fontSize: 20,}}>Welcome to Donation!</Text> */}
               <TouchableOpacity
                 style={{
                   borderRadius: 20,
@@ -189,7 +191,7 @@ function HomeScreen({ navigation }) {
                     alignItems: "center",
                     
                   }}
-                >Home</Text>
+                > Home</Text>
                 <MaterialIcons name='home' size={22} color='white' />
                 </View>
               </TouchableOpacity>
