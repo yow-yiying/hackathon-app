@@ -27,7 +27,7 @@ import ItemInput from "../Components/ItemInput";
 
 function UploadScreen({navigation}) {
   const pressHandler = () => {
-    Alert.alert("Note", "The listing will be automatically deleted once it reaches [time] today!", [
+    Alert.alert("Note", "The listing will be automatically deleted once it reaches 2200 today!", [
       { text: "Confirm", onPress: () => returnToHomeScreen },
       { text: "Cancel", style: "cancel" },
     ]);
