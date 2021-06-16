@@ -48,7 +48,7 @@ function HomeScreen({ navigation }) {
       message: "NIL",
       picture: require("../assets/handSan.jpeg"),
       itemsAvailable: [{}],
-      itemsRequested: [{ }],
+      itemsRequested: [{}],
     },
 
     {
@@ -81,7 +81,37 @@ function HomeScreen({ navigation }) {
       message: "NIL",
       picture: require("../assets/niceDay.jpeg"),
       itemsAvailable: [{}],
-      itemsRequested: [{ }],
+      itemsRequested: [{}],
+    },
+    {
+      key: "6",
+      name: "Soup Fest",
+      location: "103 Ang Mo Kio Ave 3, Block 103, Singapore 560103",
+      time: "1000-2200",
+      message: "A can of soup a day keeps the doctor away",
+      picture: require("../assets/soupFest.jpeg"),
+      itemsAvailable: [{}],
+      itemsRequested: [{}],
+    },
+    {
+      key: "7",
+      name: "Free Drinks For Our Deliver/Healthcare Workers",
+      location: "235 Ang Mo Kio Ave 3, Block 235, Singapore 560235",
+      time: "0800-2300",
+      message: "Thank you to all our wonderful workers!!",
+      picture: require("../assets/freeDrinks.jpeg"),
+      itemsAvailable: [{}],
+      itemsRequested: [{}],
+    },
+    {
+      key: "8",
+      name: "Ang Mo Kio Kindness Corner",
+      location: "218 Ang Mo Kio Ave 1, Block 218, Singapore 560218",
+      time: "1200-1800",
+      message: "This is for anyone who needs it",
+      picture: require("../assets/amk.jpeg"),
+      itemsAvailable: [{}],
+      itemsRequested: [{}],
     },
     
   ];
