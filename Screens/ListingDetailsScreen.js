@@ -12,10 +12,11 @@ import { Entypo } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 import Item from "../Components/Item.js";
 import ItemReq from "../Components/ItemReq.js";
+import { render } from "react-dom";
 
 export default function ListingDetailsScreen({ route, navigation }) {
-  const { name, location, time, message, picture, items, itemName, quantity } =
-    route.params;
+  const { name, location, time, message, picture, itemsAvailable, itemsRequested } = route.params;
+
   return (
     <View
       style={[
@@ -51,34 +52,30 @@ export default function ListingDetailsScreen({ route, navigation }) {
           </View>
           <View style={{ margin: 5 }}>
             <Text style={styles.headers}>Items available:</Text>
-            <View style={styles.item}>
-              <Text style={styles.itemText}>Item 1</Text>
-              <Text style={styles.itemText}>10</Text>
-            </View>
-
-            <View style={styles.item}>
-              <Text style={styles.itemText}>Item 2</Text>
-              <Text style={styles.itemText}>6</Text>
-            </View>
+  
+            {itemsAvailable.map((oneItem,index) => {
+            return (
+                <View key={index} style={styles.item}>
+                    <Text style={styles.itemText}>{oneItem.itemName}</Text>
+              <Text style={styles.itemText}>{oneItem.quantity}</Text>
+                </View>
+            );
+          })}   
+    
           </View>
 
           <View style={{ margin: 5 }}>
             <Text style={styles.headers}>Items requested:</Text>
-
-            <View style={styles.item}>
-              <Text style={styles.itemText}>Item 3</Text>
-              <Text style={styles.itemText}>3</Text>
-            </View>
-
-            <View style={styles.item}>
-              <Text style={styles.itemText}>Item 4</Text>
-              <Text style={styles.itemText}>1</Text>
-            </View>
-
-            <View style={styles.item}>
-              <Text style={styles.itemText}>Item 5</Text>
-              <Text style={styles.itemText}>2</Text>
-            </View>
+            
+            {itemsRequested.map((oneItem,index) => {
+            return (
+                <View key={index} style={styles.item}>
+                    <Text style={styles.itemText}>{oneItem.itemName}</Text>
+              <Text style={styles.itemText}>{oneItem.quantity}</Text>
+                </View>
+            );
+          })}  
+            
           </View>
         </View>
       </ScrollView>
