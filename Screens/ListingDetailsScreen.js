@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
   //     margin: 10,
   // },
   detailsText: {
-    fontSize: 15,
+    fontSize: 20,
     padding: 5,
   },
   detailsPhoto: {
@@ -169,6 +169,6 @@ const styles = StyleSheet.create({
     width: 300,
   },
   itemText: {
-    fontSize: 15,
+    fontSize: 18,
   },
 });
