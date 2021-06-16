@@ -1,15 +1,17 @@
 import React from "react";
 import { View, Text, Image, StyleSheet} from "react-native";
+import { Ionicons } from '@expo/vector-icons';
 
-export default function Listing() {
+// {uri: "https://wallpaperaccess.com/full/1261215.jpg"}
+export default function Listing( {name, location, time, picture}) {
     return (
         <View style = {listingStyles.listingContainer}>
             <Image style = {listingStyles.listingPhoto}
-            source = {{uri: "https://wallpaperaccess.com/full/1261215.jpg"}}/>
+            source = {picture}/>
             <View style = {listingStyles.listingTextContainer}>
-                <Text style = {listingStyles.listingCornerName}>Kindness Corner</Text>
-                <Text style = {listingStyles.listingOtherText}>some location</Text>
-                <Text style = {listingStyles.listingOtherText}>timing</Text>
+                <Text style = {listingStyles.listingCornerName}>{name}</Text>
+                <Text style = {listingStyles.listingOtherText}><Ionicons style = {{marginRight: 5}} name="location-sharp" size={20} color="#c9184a"/>{location}</Text>
+                <Text style = {listingStyles.listingOtherText}><Ionicons style = {{ marginRight: 5 }} name="time" size={20} color="#c9184a" />{time}</Text>
             </View>
         </View>
     )
@@ -23,6 +25,7 @@ const listingStyles = StyleSheet.create({
         borderRadius: 20,
         padding: 15,
         margin: 10,
+        
     }, 
     listingPhoto: {
         width: 100,
@@ -37,6 +40,7 @@ const listingStyles = StyleSheet.create({
     listingCornerName: {
         fontWeight: 'bold',
         fontSize: 20,
+
     },
     listingOtherText: {
         fontSize: 15,
