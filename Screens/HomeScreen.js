@@ -25,7 +25,7 @@ function HomeScreen({ navigation }) {
       name: "Food Drive",
       location: "208 Ang Mo Kio Ave 1, Singapore 560208",
       time: "0900-1900",
-      message: "Please only take What you need and be considerate",
+      message: "Please only take what you need and be considerate",
       picture: require("../assets/foodDrive.png"),
       itemsAvailable: [
         { itemName: "Myojo Mee Goreng Original", quantity: 20 },
