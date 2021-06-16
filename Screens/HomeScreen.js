@@ -19,7 +19,6 @@ import CancelButton from "../Components/CancelButton.js";
 import Listing from "../Components/Listing.js";
 import DoneButton from "../Components/DoneButton.js";
 import { MaterialIcons } from '@expo/vector-icons';
-//import {logo} from '../assets/logo.png';
 
 function HomeScreen({ navigation }) {
   const fakeData = [
