@@ -242,12 +242,12 @@ export default function HomeStack() {
         name="Home"
         component={HomeScreen}
         options={{
-          title: "APP NAME",
-          // headerLeft: () => (
-          //   <View style = {{paddingLeft: 10}}>
-          //     <Image source = {require('../assets/logo.png')}/>
-          //   </View>
-          // ),
+          title: "DoNation",
+          headerLeft: () => (
+            <View style = {{paddingLeft: 20}}>
+              <Image style = {{width: 70, height: 50}} source = {require("../assets/logo.PNG")}/>
+            </View>
+          ),
           headerRight: () => (
             <View style={{ paddingRight: 10 }}>
               <Ionicons name="person-circle" size={40} color="#c9184a" />

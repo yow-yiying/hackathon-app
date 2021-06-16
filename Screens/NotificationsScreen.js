@@ -39,7 +39,24 @@ const Stack = createStackNavigator();
 export default function NotificationsStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Notifications" component={NotificationsScreen} />
+      <Stack.Screen 
+        name="Notifications" 
+        component={NotificationsScreen} 
+        options={{
+          title: "APP NAME",
+          headerRight: () => (
+            <View style={{ paddingRight: 10 }}>
+              {/* <Ionicons name="person-circle" size={40} color="#c9184a" /> */}
+              {/* <Image style = {{width:10, height:10}} source = {require('../assets/logo.png')}/> */}
+            </View>
+          ),
+        // options= {{
+        //   headerLeft: () => (
+        //     <Image style = {{width:10, height:10}} source = {require('../assets/logo.png')}/>
+        //   )
+        // }}
+          }}
+        />
       {/* <Stack.Screen name = "HomeSecondScreen" component = {HomeSecondScreen} /> */}
     </Stack.Navigator>
   );
