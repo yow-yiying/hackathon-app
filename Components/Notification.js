@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     alignSelf: 'center',
     justifyContent: 'center',
+    fontSize: 15,
     //minHeight: '100%',
     // width: '90%',
 

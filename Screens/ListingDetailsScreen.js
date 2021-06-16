@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     margin: 5,
   },
   detailsCornerName: {
-    fontSize: 30,
+    fontSize: 20,
     fontWeight: "bold",
     margin: 5,
   },
@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
   },
   headers: {
     fontWeight: "bold",
-    fontSize: 25,
+    fontSize: 20,
     padding: 5,
     paddingRight: 50,
   },
@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
   //     margin: 10,
   // },
   detailsText: {
-    fontSize: 25,
+    fontSize: 15,
     padding: 5,
   },
   detailsPhoto: {
@@ -169,6 +169,6 @@ const styles = StyleSheet.create({
     width: 300,
   },
   itemText: {
-    fontSize: 20,
+    fontSize: 15,
   },
 });
