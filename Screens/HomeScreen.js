@@ -246,7 +246,7 @@ export default function HomeStack() {
           title: "DoNation",
           headerLeft: () => (
             <View style = {{paddingLeft: 20}}>
-              
+              <Image style = {{width: 70, height: 150,resizeMode:'contain',flex:1}} source = {require("../assets/logo.png")}/> 
             </View>
           ),
           headerRight: () => (
@@ -264,4 +264,4 @@ export default function HomeStack() {
   );
 }
 
-// 249 <Image style = {{width: 70, height: 150,resizeMode:'contain',flex:1}} source = {require("../assets/logo.png")}/> 
+// 249 
