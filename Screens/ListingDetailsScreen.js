@@ -34,12 +34,8 @@ export default function ListingDetailsScreen({ route, navigation }) {
         { flex: 1, justifyContent: "center", alignItems: "center" },
       ]}
     >
-      <View style={styles.header}>
-        <Text style={styles.detailsCornerName}>{name}</Text>
-        <TouchableOpacity style = {styles.editIcon}>
-          <Feather name="edit" size={24} color="black" />
-        </TouchableOpacity>
-      </View>
+      <Text style={styles.detailsCornerName}>{name}</Text>
+
       <ScrollView>
         <View style={styles.photoContainer}>
           <Image style={styles.detailsPhoto} source={picture} />
@@ -62,8 +58,13 @@ export default function ListingDetailsScreen({ route, navigation }) {
             <Text style={styles.headers}>Message:</Text>
             <Text style={styles.detailsText}>{message}</Text>
           </View>
-          <View style={{ margin: 5 }}>
-            <Text style={styles.headers}>Items available:</Text>
+          <View>
+            <View style={styles.editIconRow}>
+              <Text style={styles.headers}>Items available:</Text>
+              <TouchableOpacity style={styles.editIcon}>
+                <Feather name="edit" size={24} color="black" />
+              </TouchableOpacity>
+            </View>
 
             {itemsAvailable.map((oneItem, index) => {
               return (
@@ -75,8 +76,13 @@ export default function ListingDetailsScreen({ route, navigation }) {
             })}
           </View>
 
-          <View style={{ margin: 5 }}>
-            <Text style={styles.headers}>Items requested:</Text>
+          <View >
+            <View style={styles.editIconRow}>
+              <Text style={styles.headers}>Items requested:</Text>
+              <TouchableOpacity style={styles.editIcon}>
+                <Feather name="edit" size={24} color="black" />
+              </TouchableOpacity>
+            </View>
 
             {itemsRequested.map((oneItem, index) => {
               return (
@@ -100,13 +106,12 @@ const styles = StyleSheet.create({
   appBackground: {
     backgroundColor: "white",
   },
-  header: {
+  editIconRow: {
     flexDirection: "row",
-    width: '100%',
+    //width: "90%",
     justifyContent: "space-between",
-    alignItems: 'center',
-    paddingLeft: 10,
-    paddingRight: 10,
+   alignItems: "center",
+    margin: 5,
   },
   detailsCornerName: {
     fontSize: 30,
@@ -124,6 +129,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 25,
     padding: 5,
+    paddingRight: 50,
   },
   // defaultContainer: {
   //     flex: 1,
