@@ -25,7 +25,7 @@ export default function Notification({text}) {
       <View style={styles.notifContainer}>
         <FontAwesome name="bell" size={20} color = '#c9184a'/>
           <View style = {{marginLeft: 10, marginRight: 50}}>
-          <Text style={styles.notifText} >
+          <Text numberOfLines = {2} style={styles.notifText} >
             {/* {props.text} */}
             {text}
           </Text>
