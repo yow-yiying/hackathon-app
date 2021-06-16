@@ -5,12 +5,13 @@ import styles from "./style.js";
 import Notification from "../Components/Notification.js";
 
 function NotificationsScreen() {
-  const text1 = 'Request fufilled by user MEOWMEOW';
-  const text2 = 'Kindness Corner at Greendale Block 44A closed';
-  const text3 = 'Kindness Corner at Light Vista Block 123 opened';
-  const text4 = 'Your request was fufilled by user CHOCBREAD123';
+  var text1 = "MEOWMEOW52 has fulfilled your request at 244 Ang Mo Kio Ave 3";
+  var text2 = 'Kindness Corner near you at 44A Ang Mo Kio has closed';
+  var text3 = 'Kindness Corner near you at 123 Light Vista has opened';
+  var text4 = 'CHOCBREAD123 has fulfilled your item request at 158 Yio Chu Kang Ave 1';
+  var text5 = 'WOOFWOOF888 has sent you a thank you note';
 
-  const [notifList, setItemsArr] = useState([text1,text2,text3,text4]);
+  const [notifList, setItemsArr] = useState([text1,text2,text3,text4, text5]);
 
     const deleteNotif = (index) => {
         let newArr = [...notifList];

@@ -19,7 +19,8 @@ import {
 import { createStackNavigator } from "@react-navigation/stack";
 //import style from "./style";
 import DoneButton from "../Components/DoneButton";
-import { MaterialIcons } from "@expo/vector-icons";
+import { Ionicons } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
 import ItemInput from "../Components/ItemInput";
 
 
@@ -59,7 +60,8 @@ function UploadScreen() {
           <View style={styles.pageContainer}>
             <View style={styles.imageContainer}>
               <Text style={styles.imageText}>Upload Your Image Here! </Text>
-              <TouchableOpacity>    
+              <Ionicons name="image" size={24} color="black" style = {styles.uploadPicture} />
+              {/* <TouchableOpacity>    
                 <MaterialIcons
                   name="edit"
                   size={25}
@@ -67,7 +69,7 @@ function UploadScreen() {
                   style={styles.uploadPicture}
                   margin={10}
                 />
-              </TouchableOpacity>
+              </TouchableOpacity> */}
             </View>
 
             <TextInput style={styles.itemBox} placeholder={"Name of Corner"} />
@@ -163,12 +165,14 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   imageContainer: {
-    borderRadius: 5,
+    borderRadius: 20,
     height: 200,
     justifyContent: "center",
     alignItems: "center",
     borderColor: "#c9184a",
-    backgroundColor: "pink",
+    borderStyle: 'dashed',
+    borderWidth: 3,
+    backgroundColor: "#FADCD9",
     margin: 10,
     flexDirection: "row",
   },

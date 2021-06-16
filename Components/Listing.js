@@ -21,7 +21,7 @@ const listingStyles = StyleSheet.create({
     listingContainer: {
         flexDirection: 'row',
         width: '95%',
-        backgroundColor: 'pink',
+        backgroundColor: "#FADCD9",
         borderRadius: 20,
         padding: 15,
         margin: 10,
